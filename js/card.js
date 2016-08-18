@@ -5,10 +5,3 @@ angular.module('cardDemo2', ['ngMaterial'])
 });
 
 
-angular 
-	.module("MyApp")
-	.controller("MyController",MyController);
-
-function MyController() {
-	this.greeting = "Oh Sweet Mercy Yes"
-}

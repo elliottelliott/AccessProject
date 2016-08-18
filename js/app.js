@@ -2,12 +2,20 @@ angular
     	.module("MyApp", ['ngMaterial', 'ngAria', 'ngMessages'])
 		.config(function($mdThemingProvider) {
 		  	$mdThemingProvider.theme('default')
-		    .primaryPalette('teal', {
+		    .primaryPalette('purple', {
 		      'default': '400', // by default use shade 400 from the teal palette for primary intentions
 		      'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
 		      'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
 		      'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
 		    })
+
+		    .accentPalette('pink', {
+		      'default': '200' // use shade 200 for default, and keep all other shades the same
+		    });
+		});
+
+
+
 		    // If you specify less than all of the keys, it will inherit from the
 		    // default shades
 		    /*pallet
@@ -21,16 +29,4 @@ angular
 .divider-color         { border-color: #BDBDBD;}
 
 */
-		    .accentPalette('pink', {
-		      'default': '200' // use shade 200 for default, and keep all other shades the same
-		    });
-		});
 
-
-// angular 
-// 	.module("MyApp")
-// 	.controller("MyController",MyController);
-
-// function MyController() {
-// 	this.greeting = "Oh Sweet Mercy Yes"
-// }
