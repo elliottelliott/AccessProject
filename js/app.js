@@ -1,18 +1,35 @@
 angular
-    	.module("MyApp", ['ngMaterial', 'ngAria', 'ngMessages'])
-		.config(function($mdThemingProvider) {
-		  	$mdThemingProvider.theme('default')
-		    .primaryPalette('purple', {
-		      'default': '400', // by default use shade 400 from the teal palette for primary intentions
-		      'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
-		      'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
-		      'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
-		    })
+    	.module("MyApp", ['ngMaterial', 'ngAria', 'ngMessages', ])
+    	
+app.config(function($mdThemingProvider) {
+  var customBlueMap = 		$mdThemingProvider.extendPalette('light-blue', {
+    'contrastDefaultColor': 'light',
+    'contrastDarkColors': ['50'],
+    '50': 'ffffff'
+  });
+  $mdThemingProvider.definePalette('customBlue', customBlueMap);
+  $mdThemingProvider.theme('default')
+    .primaryPalette('customBlue', {
+      'default': '500',
+      'hue-1': '50'
+    })
+    .accentPalette('pink');
+  $mdThemingProvider.theme('input', 'default')
+        .primaryPalette('grey')
+});
+		// .config(function($mdThemingProvider) {
+		//   	$mdThemingProvider.theme('default')
+		//     .primaryPalette('purple', {
+		//       'default': '400', // by default use shade 400 from the teal palette for primary intentions
+		//       'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
+		//       'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
+		//       'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
+		//     })
 
-		    .accentPalette('pink', {
-		      'default': '200' // use shade 200 for default, and keep all other shades the same
-		    });
-		});
+		//     .accentPalette('pink', {
+		//       'default': '200' // use shade 200 for default, and keep all other shades the same
+		//     });
+		// });
 
 
 
